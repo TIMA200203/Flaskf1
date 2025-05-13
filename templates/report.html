@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Загальний звіт{% endblock %}
+
+{% block content %}
+<h2>Загальний звіт</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Ранг</th>
+            <th>Ім'я</th>
+            <th>Команда</th>
+            <th>Час</th>
+            <th>Статус</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for driver in report_lines %}
+            <tr>
+                <td>{{ driver.rank }}</td>
+                <td>{{ driver.name }}</td>
+                <td>{{ driver.team }}</td>
+                <td>{{ driver.time }}</td>
+                <td>{{ driver.status }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

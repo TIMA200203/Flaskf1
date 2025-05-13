@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block title %}Інформація про гонщика{% endblock %}
+
+{% block content %}
+<h2>Інформація про {{ driver.driver_name }}</h2>
+<p>Команда: {{ driver.team }}</p>
+<p>Час кола: {{ driver.driver_lap_time if driver.driver_lap_time else "Час не визначено" }}</p>
+<a href="/report">Повернутись до списку</a>
+{% endblock %}

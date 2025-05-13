@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Список гонщиків{% endblock %}
+
+{% block content %}
+<h2>Список гонщиків</h2>
+<ul>
+    {% for driver in drivers %}
+        <li>
+            <a href="/report/drivers/{{ driver.driver_init }}">{{ driver.driver_name }} ({{ driver.driver_init }})</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="/report">Повернутись до звіту</a>
+{% endblock %}
